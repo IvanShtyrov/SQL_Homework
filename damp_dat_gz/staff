@@ -1,0 +1,10 @@
+INSERT INTO public.staff VALUES (1, '22-98/02', 58, 'Franklin', 'Paul', 'Filipino');
+INSERT INTO public.staff VALUES (2, '18-31/55', 43, 'Marcellus', 'Lucas', 'Guaraní');
+INSERT INTO public.staff VALUES (3, '83-99/74', 45, 'Myron', 'Ewing', 'English');
+INSERT INTO public.staff VALUES (4, '34-35/30', 37, 'Louvenia', 'Black', 'Nepali');
+INSERT INTO public.staff VALUES (5, '91-35/32', 55, 'Cornelius', 'Goodwin', 'Czech');
+INSERT INTO public.staff VALUES (6, '24-62/82', 17, 'Hobert', 'Mckenzie', 'Tamil');
+INSERT INTO public.staff VALUES (7, '24-21/43', 36, 'Mitchel', 'Newman', 'Luxembourgish');
+INSERT INTO public.staff VALUES (8, '49-13/30', 43, 'Charita', 'Chavez', 'Gagauz');
+INSERT INTO public.staff VALUES (9, '84-14/62', 24, 'Millard', 'Leon', 'Fijian');
+INSERT INTO public.staff VALUES (10, '33-45/91', 58, 'Malcom', 'Cunningham', 'Belarusian');
