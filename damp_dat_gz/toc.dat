@@ -1,0 +1,247 @@
+PGDMP     .    3                {            postgres    13.11    13.11 1    с           0    0    ENCODING    ENCODING        SET client_encoding = 'UTF8';
+                      false         т           0    0 
+   STDSTRINGS 
+   STDSTRINGS     (   SET standard_conforming_strings = 'on';
+                      false         у           0    0 
+   SEARCHPATH 
+   SEARCHPATH     8   SELECT pg_catalog.set_config('search_path', '', false);
+                      false         ф           1262    13442    postgres    DATABASE     e   CREATE DATABASE postgres WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'Russian_Russia.1251';
+    DROP DATABASE postgres;
+                postgres    false         х           0    0    DATABASE postgres    COMMENT     N   COMMENT ON DATABASE postgres IS 'default administrative connection database';
+                   postgres    false    3060                     2615    2200    public    SCHEMA        CREATE SCHEMA public;
+    DROP SCHEMA public;
+                postgres    false         ц           0    0 
+   SCHEMA public    COMMENT     6   COMMENT ON SCHEMA public IS 'standard public schema';
+                   postgres    false    4         Ф            1259    33957    cargo    TABLE     y   CREATE TABLE public.cargo (
+    id integer NOT NULL,
+    c_token text,
+    pin numeric,
+    gen text,
+    c_type text
+);
+    DROP TABLE public.cargo;
+       public         heap    postgres    false    4         У            1259    33955    cargo_id_seq    SEQUENCE     „   CREATE SEQUENCE public.cargo_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+ #   DROP SEQUENCE public.cargo_id_seq;
+       public          postgres    false    4    212         ч           0    0    cargo_id_seq    SEQUENCE OWNED BY     =   ALTER SEQUENCE public.cargo_id_seq OWNED BY public.cargo.id;
+          public          postgres    false    211         Т            1259    33945    clients    TABLE     “   CREATE TABLE public.clients (
+    id integer NOT NULL,
+    first_name text,
+    last_name text,
+    email text,
+    phone text,
+    secret text
+);
+    DROP TABLE public.clients;
+       public         heap    postgres    false    4         С            1259    33943    clients_id_seq    SEQUENCE     †   CREATE SEQUENCE public.clients_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+ %   DROP SEQUENCE public.clients_id_seq;
+       public          postgres    false    210    4         ш           0    0    clients_id_seq    SEQUENCE OWNED BY     A   ALTER SEQUENCE public.clients_id_seq OWNED BY public.clients.id;
+          public          postgres    false    209         М            1259    33863    corrected_orders_data    TABLE       CREATE TABLE public.corrected_orders_data (
+    staff_age numeric,
+    order_price numeric,
+    order_dt date,
+    order_pk numeric,
+    street_number integer,
+    street_name text,
+    order_country text,
+    order_company text,
+    order_list text[],
+    cli_first_name text,
+    cli_last_name text,
+    cli_email text,
+    cli_phone text,
+    cli_secret text,
+    c_token text,
+    c_pin numeric,
+    c_gen text,
+    staff_first_name text,
+    staff_last_name text,
+    c_type text,
+    staff_id text,
+    staff_lang text
+);
+ )   DROP TABLE public.corrected_orders_data;
+       public         heap    postgres    false    4         Н            1259    33890    corrected_orders_data_02    TABLE       CREATE TABLE public.corrected_orders_data_02 (
+    staff_first_name text,
+    staff_last_name text,
+    staff_age numeric,
+    staff_id text,
+    staff_lang text,
+    order_pk numeric,
+    street_name text,
+    street_number integer,
+    order_country text,
+    order_company text,
+    order_price numeric,
+    order_dt date,
+    order_list text[],
+    cli_first_name text,
+    cli_last_name text,
+    cli_email text,
+    cli_phone text,
+    cli_secret text,
+    c_token text,
+    c_pin numeric,
+    c_gen text,
+    c_type text
+);
+ ,   DROP TABLE public.corrected_orders_data_02;
+       public         heap    postgres    false    4         О            1259    33916    corrected_orders_data_03    TABLE       CREATE TABLE public.corrected_orders_data_03 (
+    staff_first_name text,
+    staff_last_name text,
+    staff_age numeric,
+    staff_id text,
+    staff_lang text,
+    order_pk numeric,
+    street_name text,
+    street_number integer,
+    order_country text,
+    order_company text,
+    order_price numeric,
+    order_dt date,
+    order_list text[],
+    cli_first_name text,
+    cli_last_name text,
+    cli_email text,
+    cli_phone text,
+    cli_secret text,
+    c_token text,
+    c_pin numeric,
+    c_gen text,
+    c_type text
+);
+ ,   DROP TABLE public.corrected_orders_data_03;
+       public         heap    postgres    false    4         Ц            1259    33979    orders    TABLE       CREATE TABLE public.orders (
+    id integer NOT NULL,
+    user_id integer,
+    person_id integer,
+    cargo_id integer,
+    street_name text,
+    street_number integer,
+    country text,
+    company text,
+    price numeric,
+    dt date,
+    list text[],
+    pk integer
+);
+    DROP TABLE public.orders;
+       public         heap    postgres    false    4         Л            1259    16582    orders_data    TABLE     Ё  CREATE TABLE public.orders_data (
+    staf_name text,
+    staff_age integer,
+    staff_id text,
+    staff_lang text,
+    order_pk text,
+    order_address text,
+    order_country text,
+    order_company text,
+    order_price numeric,
+    order_dt date,
+    order_list text[],
+    cli_name text,
+    cli_email text,
+    cli_phone text,
+    cli_secret text,
+    c_token text,
+    c_pin text,
+    c_gen text,
+    c_type text
+);
+    DROP TABLE public.orders_data;
+       public         heap    postgres    false    4         Х            1259    33977 
+   orders_id_seq    SEQUENCE     …   CREATE SEQUENCE public.orders_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+ $   DROP SEQUENCE public.orders_id_seq;
+       public          postgres    false    214    4         щ           0    0 
+   orders_id_seq    SEQUENCE OWNED BY     ?   ALTER SEQUENCE public.orders_id_seq OWNED BY public.orders.id;
+          public          postgres    false    213         Р            1259    33933    staff    TABLE     “   CREATE TABLE public.staff (
+    id integer NOT NULL,
+    staff_id text,
+    age numeric,
+    first_name text,
+    last_name text,
+    lang text
+);
+    DROP TABLE public.staff;
+       public         heap    postgres    false    4         П            1259    33931    staff_id_seq    SEQUENCE     „   CREATE SEQUENCE public.staff_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+ #   DROP SEQUENCE public.staff_id_seq;
+       public          postgres    false    4    208         ъ           0    0    staff_id_seq    SEQUENCE OWNED BY     =   ALTER SEQUENCE public.staff_id_seq OWNED BY public.staff.id;
+          public          postgres    false    207         Q           2604    33960    cargo id    DEFAULT     d   ALTER TABLE ONLY public.cargo ALTER COLUMN id SET DEFAULT nextval('public.cargo_id_seq'::regclass);
+ 7   ALTER TABLE public.cargo ALTER COLUMN id DROP DEFAULT;
+       public          postgres    false    211    212    212         P           2604    33948 
+   clients id    DEFAULT     h   ALTER TABLE ONLY public.clients ALTER COLUMN id SET DEFAULT nextval('public.clients_id_seq'::regclass);
+ 9   ALTER TABLE public.clients ALTER COLUMN id DROP DEFAULT;
+       public          postgres    false    210    209    210         R           2604    33982 	   orders id    DEFAULT     f   ALTER TABLE ONLY public.orders ALTER COLUMN id SET DEFAULT nextval('public.orders_id_seq'::regclass);
+ 8   ALTER TABLE public.orders ALTER COLUMN id DROP DEFAULT;
+       public          postgres    false    214    213    214         O           2604    33936    staff id    DEFAULT     d   ALTER TABLE ONLY public.staff ALTER COLUMN id SET DEFAULT nextval('public.staff_id_seq'::regclass);
+ 7   ALTER TABLE public.staff ALTER COLUMN id DROP DEFAULT;
+       public          postgres    false    207    208    208         м          0    33957    cargo 
+   TABLE DATA                 public          postgres    false    212       3052.dat к          0    33945    clients 
+   TABLE DATA                 public          postgres    false    210       3050.dat д          0    33863    corrected_orders_data 
+   TABLE DATA                 public          postgres    false    204       3044.dat е          0    33890    corrected_orders_data_02 
+   TABLE DATA                 public          postgres    false    205       3045.dat ж          0    33916    corrected_orders_data_03 
+   TABLE DATA                 public          postgres    false    206       3046.dat о          0    33979    orders 
+   TABLE DATA                 public          postgres    false    214       3054.dat г          0    16582    orders_data 
+   TABLE DATA                 public          postgres    false    203       3043.dat и          0    33933    staff 
+   TABLE DATA                 public          postgres    false    208       3048.dat ы           0    0    cargo_id_seq    SEQUENCE SET     >   SELECT pg_catalog.setval('public.cargo_id_seq', 33885, true);
+          public          postgres    false    211         ь           0    0    clients_id_seq    SEQUENCE SET     =   SELECT pg_catalog.setval('public.clients_id_seq', 50, true);
+          public          postgres    false    209         э           0    0 
+   orders_id_seq    SEQUENCE SET     @   SELECT pg_catalog.setval('public.orders_id_seq', 200000, true);
+          public          postgres    false    213         ю           0    0    staff_id_seq    SEQUENCE SET     ;   SELECT pg_catalog.setval('public.staff_id_seq', 10, true);
+          public          postgres    false    207         [           2606    33965    cargo cargo_pkey 
+   CONSTRAINT     N   ALTER TABLE ONLY public.cargo
+    ADD CONSTRAINT cargo_pkey PRIMARY KEY (id);
+ :   ALTER TABLE ONLY public.cargo DROP CONSTRAINT cargo_pkey;
+       public            postgres    false    212         X           2606    33953    clients clients_pkey 
+   CONSTRAINT     R   ALTER TABLE ONLY public.clients
+    ADD CONSTRAINT clients_pkey PRIMARY KEY (id);
+ >   ALTER TABLE ONLY public.clients DROP CONSTRAINT clients_pkey;
+       public            postgres    false    210         ]           2606    33987    orders orders_pkey 
+   CONSTRAINT     P   ALTER TABLE ONLY public.orders
+    ADD CONSTRAINT orders_pkey PRIMARY KEY (id);
+ <   ALTER TABLE ONLY public.orders DROP CONSTRAINT orders_pkey;
+       public            postgres    false    214         U           2606    33941    staff staff_pkey 
+   CONSTRAINT     N   ALTER TABLE ONLY public.staff
+    ADD CONSTRAINT staff_pkey PRIMARY KEY (id);
+ :   ALTER TABLE ONLY public.staff DROP CONSTRAINT staff_pkey;
+       public            postgres    false    208         Y           1259    33966    cargo_id_index    INDEX     >   CREATE INDEX cargo_id_index ON public.cargo USING btree (id);
+ "   DROP INDEX public.cargo_id_index;
+       public            postgres    false    212         V           1259    33954    clients_id_index    INDEX     B   CREATE INDEX clients_id_index ON public.clients USING btree (id);
+ $   DROP INDEX public.clients_id_index;
+       public            postgres    false    210         S           1259    33942    staff_id_index    INDEX     >   CREATE INDEX staff_id_index ON public.staff USING btree (id);
+ "   DROP INDEX public.staff_id_index;
+       public            postgres    false    208         `           2606    33998    orders orders_cargo_id_fkey 
+   FK CONSTRAINT     {   ALTER TABLE ONLY public.orders
+    ADD CONSTRAINT orders_cargo_id_fkey FOREIGN KEY (cargo_id) REFERENCES public.cargo(id);
+ E   ALTER TABLE ONLY public.orders DROP CONSTRAINT orders_cargo_id_fkey;
+       public          postgres    false    214    212    2907         _           2606    33993    orders orders_person_id_fkey 
+   FK CONSTRAINT        ALTER TABLE ONLY public.orders
+    ADD CONSTRAINT orders_person_id_fkey FOREIGN KEY (person_id) REFERENCES public.clients(id);
+ F   ALTER TABLE ONLY public.orders DROP CONSTRAINT orders_person_id_fkey;
+       public          postgres    false    210    214    2904         ^           2606    33988    orders orders_user_id_fkey 
+   FK CONSTRAINT     y   ALTER TABLE ONLY public.orders
+    ADD CONSTRAINT orders_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.staff(id);
+ D   ALTER TABLE ONLY public.orders DROP CONSTRAINT orders_user_id_fkey;
+       public          postgres    false    214    2901    208        
